@@ -1,0 +1,12 @@
+PATCH  http://localhost:9000/customers/2 HTTP/1.1
+content-type: application/json
+
+
+{ 
+   "firstname" : "Phạm Xuân",
+   "lastname" : "Thanh",
+   "phonenumber" : "0905407429",
+   "email" : "binbungbu6201@gmail.com",
+   "address" : "Đầu kiệt 8, thôn Yến Nê 1",
+   "birthday" : "2001-08-03"
+}

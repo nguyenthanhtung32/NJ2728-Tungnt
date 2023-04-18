@@ -1,0 +1,30 @@
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+  margin-bottom: 20px;
+  border: 1px solid black;
+  height: 50px;
+  border-radius: 10px;
+}
+.select {
+  width: 200px;
+  border-radius: 5px;
+  height: 30px;
+  margin-left: 10px;
+}
+.input {
+  width: 200px;
+  margin-left: 10px;
+}
+.button  {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: cyan;
+  color: black;
+}
+.table {
+  border:  1px solid black;
+  border-radius: 10px;
+}

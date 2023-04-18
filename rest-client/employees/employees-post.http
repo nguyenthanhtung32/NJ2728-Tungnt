@@ -1,0 +1,12 @@
+POST http://localhost:9000/employees HTTP/1.1
+content-Type: application/json
+
+{ 
+   "firstname" : "Phạm Thị",
+   "lastname" : "C",
+   "phonenumber" : "0905412512",
+   "address" : "Tổ 14, thôn An Trạch",
+   "email" : "phamthib@gmail.com",
+   "password" : "123456",
+   "birthday" : "2001-06-25"
+}

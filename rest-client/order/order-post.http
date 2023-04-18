@@ -1,0 +1,21 @@
+POST http://localhost:9000/orders/ HTTP/1.1
+content-type: application/json
+
+{ 
+   "orderDetails": [
+      {
+         "productId": "6424294a30d3219f18d94c5b",
+         "price": 100,
+         "discount": 10,
+         "quantity": 1
+      }
+   ],
+   "createdDate": "2023-03-29",
+   "shippedDate": "2023-03-31",
+   "paymentType": "CREDIT CARD",
+   "shippingAddress": "VietNam",
+   "status": "WAITING",
+   "description": "Polo shirt",
+   "customerId": "641a9425e0ca92023090b68d",
+   "employeeId": "641a94ccde150d4378b455f4"
+}

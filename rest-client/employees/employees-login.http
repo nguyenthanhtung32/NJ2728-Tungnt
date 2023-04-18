@@ -1,0 +1,10 @@
+POST http://localhost:9000/employees/login HTTP/1.1
+content-type: application/json
+
+{ 
+   "email": "binbungbu6201@gmail.com",
+   "password": "thanhtung2306"
+}
+
+# GET http://localhost:9000/employees/test-passport HTTP/1.1
+# content-type: application/json

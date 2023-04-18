@@ -1,0 +1,15 @@
+POST http://localhost:9000/products/ HTTP/1.1
+content-type: application/json
+
+{
+   "name": "iPhone 13 Pro Max",
+   "price": 3000,
+   "discount": 30,
+   "stock": 50,
+   "categoryId": "641a9736a89e63e454109466",
+   "supplierId": "641a95470865e7b96736dcc3"
+}
+   
+
+   
+ 

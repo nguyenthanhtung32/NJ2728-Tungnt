@@ -1,0 +1,29 @@
+//GET http://localhost:9000/questions/6?birthday=now HTTP/1.1
+//content-type: application/json
+
+//GET http://localhost:9000/questions/4?q=bach dang HTTP/1.1
+//content-type: application/json
+
+//GET http://localhost:9000/questions/7?status=WAITTING HTTP/1.1
+//content-Type: application/json 
+
+//GET http://localhost:9000/questions/8a?status=WAITING&fromDate=2023-03-28 HTTP/1.1
+//content-type: application/json
+
+//GET http://localhost:9000/questions/8b?fromDate=2023-03-29&toDate=2023-03-31&status=WAITTING HTTP/1.1
+//content-type: application/json
+
+//GET http://localhost:9000/questions/15?supplierNames=SamSung HTTP/1.1
+//content-type: application/json
+
+//GET http://localhost:9000/questions/25a HTTP/1.1
+//content-type: application/json
+
+//GET http://localhost:9000/questions/25b HTTP/1.1
+//content-Type: application/json
+
+//GET http://localhost:9000/questions/26a HTTP/1.1
+//content-Type: application/json
+
+GET http://localhost:9000/questions/17 HTTP/1.1
+content-Type: application/json
