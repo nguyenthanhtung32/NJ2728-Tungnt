@@ -18,13 +18,13 @@
   width: 200px;
   margin-left: 10px;
 }
-.button  {
+.button {
   margin-left: 10px;
   margin-right: 10px;
   background-color: cyan;
   color: black;
 }
 .table {
-  border:  1px solid black;
+  border: 1px solid black;
   border-radius: 10px;
-}
+};

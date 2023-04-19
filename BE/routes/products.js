@@ -14,7 +14,7 @@ router.get('/', validateSchema(getProductsSchema), async (req, res, next) => {
   try {
     const { category, supplier, productName, stockStart, stockEnd, priceStart, priceEnd, discountStart, discountEnd, skip, limit } = req.query;
     const conditionFind = {};
-    console.log( conditionFind);
+    console.log(conditionFind);
 
     if (category) {
       conditionFind.categoryId = category;

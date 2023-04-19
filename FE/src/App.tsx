@@ -29,10 +29,10 @@ const footerStyle: React.CSSProperties = {
   textAlign: "center",
   color: "#fff",
   backgroundColor: "#000000",
-  width: "100%",
-  padding: "10px",
-  position: "fixed",
-  bottom: 0,
+  // width: "100%",
+   padding: "10px",
+  // position: "fixed",
+  // bottom: 0,
 };
 
 function App() {

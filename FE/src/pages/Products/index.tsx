@@ -38,6 +38,9 @@ export default function Products() {
   const [discountStart, setDiscountStart] = React.useState("");
   const [discountEnd, setDiscountEnd] = React.useState("");
 
+  const [currentPage, setCurrentPage] = React.useState<number>(1);
+  const [totalProducts, setTotalProducts] = React.useState<number>(0);
+
   const [updateForm] = Form.useForm();
 
   const onSelectCategoryFilter = useCallback((e: any) => {
@@ -285,97 +288,104 @@ export default function Products() {
         console.error(err);
       });
   };
+  const onPageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
   return (
     <div style={{ padding: 24 }}>
       {/* TABLE */}
-      <Form.Item label="Tìm Kiếm" name={""} hasFeedback>
-        <div className={Styles.filter}>
-          <select
-            className={Styles.select}
-            id="cars"
-            onChange={onSelectCategoryFilter}
-          >
-            {categories.map((item: { _id: string; name: string }) => {
-              return (
-                <option key={item._id} value={item._id}>
-                  {item.name}
-                </option>
-              );
-            })}
-          </select>
-          <select
-            className={Styles.select}
-            id="cars"
-            onChange={onSelectSupplierFilter}
-          >
-            {suppliers.map((item: { _id: string; name: string }) => {
-              return (
-                <option key={item._id} value={item._id}>
-                  {item.name}
-                </option>
-              );
-            })}
-          </select>
-          <Input
-            placeholder="Tìm kiếm sản phẩm"
-            value={productName}
-            onChange={onSelectProductNameFilter}
-            className={Styles.input}
-            allowClear
-          />
-          <Input
-            placeholder="Tồn kho thấp nhất"
-            value={stockStart}
-            onChange={onSelectStockStartFilter}
-            className={Styles.input}
-            allowClear
-          />
-          <Input
-            placeholder="Tồn kho cao nhất"
-            value={stockEnd}
-            onChange={onSelectStockEndFilter}
-            className={Styles.input}
-            allowClear
-          />
-          <Input
-            placeholder="Giá thấp nhất"
-            value={priceStart}
-            onChange={onSelectPriceStartFilter}
-            className={Styles.input}
-            allowClear
-          />
-          <Input
-            placeholder="Giá cao nhất"
-            value={priceEnd}
-            onChange={onSelectPriceEndFilter}
-            className={Styles.input}
-            allowClear
-          />
-          <Input
-            placeholder="Giảm giá thấp nhất"
-            value={discountStart}
-            onChange={onSelectDiscountStartFilter}
-            className={Styles.input}
-            allowClear
-          />
-          <Input
-            placeholder="Giám giá cao nhất"
-            value={discountEnd}
-            onChange={onSelectDiscountEndFilter}
-            className={Styles.input}
-            allowClear
-          />
-          <Button className={Styles.button} onClick={onSearch}>
-            Search
-          </Button>
-        </div>
-      </Form.Item>
+      <div className={Styles.filter}>
+        <select
+          className={Styles.select}
+          id="cars"
+          onChange={onSelectCategoryFilter}
+        >
+          {categories.map((item: { _id: string; name: string }) => {
+            return (
+              <option key={item._id} value={item._id}>
+                {item.name}
+              </option>
+            );
+          })}
+        </select>
+        <select
+          className={Styles.select}
+          id="cars"
+          onChange={onSelectSupplierFilter}
+        >
+          {suppliers.map((item: { _id: string; name: string }) => {
+            return (
+              <option key={item._id} value={item._id}>
+                {item.name}
+              </option>
+            );
+          })}
+        </select>
+        <Input
+          placeholder="Tìm kiếm sản phẩm"
+          value={productName}
+          onChange={onSelectProductNameFilter}
+          className={Styles.input}
+          allowClear
+        />
+        <Input
+          placeholder="Tồn kho thấp nhất"
+          value={stockStart}
+          onChange={onSelectStockStartFilter}
+          className={Styles.input}
+          allowClear
+        />
+        <Input
+          placeholder="Tồn kho cao nhất"
+          value={stockEnd}
+          onChange={onSelectStockEndFilter}
+          className={Styles.input}
+          allowClear
+        />
+        <Input
+          placeholder="Giá thấp nhất"
+          value={priceStart}
+          onChange={onSelectPriceStartFilter}
+          className={Styles.input}
+          allowClear
+        />
+        <Input
+          placeholder="Giá cao nhất"
+          value={priceEnd}
+          onChange={onSelectPriceEndFilter}
+          className={Styles.input}
+          allowClear
+        />
+        <Input
+          placeholder="Giảm giá thấp nhất"
+          value={discountStart}
+          onChange={onSelectDiscountStartFilter}
+          className={Styles.input}
+          allowClear
+        />
+        <Input
+          placeholder="Giám giá cao nhất"
+          value={discountEnd}
+          onChange={onSelectDiscountEndFilter}
+          className={Styles.input}
+          allowClear
+        />
+        <Button className={Styles.button} onClick={onSearch}>
+          Search
+        </Button>
+      </div>
       <Table
         className={Styles.table}
         rowKey="id"
         dataSource={products}
         columns={columns}
+        pagination={{
+          current: currentPage,
+          pageSize: 5,
+          total: totalProducts,
+          onChange: onPageChange,
+        }}
       />
 
       {/* EDIT FORM */}
